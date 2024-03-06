@@ -1,0 +1,20 @@
+server:
+  port: 9191
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: AUTH-SERVICE
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/**
+          filters:
+            - name: AuthenticationFilter
+
+gateway:
+  open-paths: /auth/registration-by-mobile
+

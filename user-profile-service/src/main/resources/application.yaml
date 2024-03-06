@@ -1,0 +1,19 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: USER-PROFILE-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/bookland-chatee-user-db?createDatabaseIfNotExist=true
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+jwt:
+  secretKey: GhL3UpKXYjMsCpkMsvnRlLpszysm5LPjj5T/SE8IW1U=
+  # this time is in hours
+  token-validity: 24
+
+app:
+  unSecured-urls: /api/user/registration-mobile
